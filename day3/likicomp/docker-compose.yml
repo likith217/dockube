@@ -1,0 +1,6 @@
+version: '3.5'
+services:
+ likiapp1:
+  container_name: likic1
+  image: alpine
+  command: ping google.com

@@ -1,0 +1,8 @@
+FROM java
+maintainer likith.ht@gmail.com
+run mkdir /download /tomcat
+run wget http://apachemirror.wuchna.com/tomcat/tomcat-8/v8.5.54/bin/apache-tomcat-8.5.54.tar.gz
+run tar xvzf apache-tomcat-8.5.54.tar.gz  -C /tomcat
+workdir /tomcat/apache-tomcat-8.5.54/bin
+expose 8080
+cmd ["./catalina.sh","run"]

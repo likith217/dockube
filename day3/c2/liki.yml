@@ -1,0 +1,9 @@
+version: '3.7'
+services: 
+ likiwebapp: 
+  image: dockerashu/oracle:may2020
+  container_name: likiweb1
+  environment:
+   x: web2
+   ports:
+    -"2121:80"

@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+ likiwebapp:
+  image: nginx
+  container_name: liknginx
+  ports:
+   - "9011:80"
+  networks:
+   - likinet
+  volumes:
+   - likivol:/var/log/nginx/
+
+networks:
+ likinet:
+
+volumes:
+ likivol:
+
+

@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+ likidb:
+  image: mysql
+  restart: always
+  command: --default-authentication-plugin=mysql_native_password
+  environment:
+   MYSQL_ROOT_PASSWORD: liki123
+   MYSQL_USER: liki
+   MYSQL_PASSWORD: liki1234
+ likiweb:
+  image: wordpress
+  depends_on:
+   - likidb
+  ports:
+   - "2323:80"
+  environment:
+   WORDPRESS_BD_HOST: "likidb:3306"
+   WORDPRESS_DB_USER: liki
+   WORDPRESS_DB_PASSWORD: liki1234
+   WORDPRESS_DB_NAME: mydb
+volumes:
+ likidb:

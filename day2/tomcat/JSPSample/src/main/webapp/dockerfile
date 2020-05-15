@@ -1,0 +1,6 @@
+FROM tomcat
+maintainer likith.ht@gmail.com
+run mkdir /usr/local/tomcat/webapps/japp
+workdir /usr/local/tomcat/webapps/japp
+add . .
+expose 8080
